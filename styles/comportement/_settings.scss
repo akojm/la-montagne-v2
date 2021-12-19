@@ -95,7 +95,7 @@ nav {
     background: rgba(255, 255, 255, 0.15);
     height: 65px;
     position: absolute;
-    top: 695px;
+    top: 855px;
     width: 100%;
     
     ul{
@@ -112,9 +112,6 @@ nav {
       }
       
     }
-
-
-
 
 /* section -1 */
 
@@ -139,22 +136,22 @@ p, h2, .btn{
 .section-2{
   display: flex;
   flex-direction: row;
-  align-items: center;
-  min-height: 800px;
+  align-items: flex-start;
+  justify-content: space-around;
+  min-height: 600px;
   background: rgb(255, 255, 255);
   border-top: 1px solid rgb(223, 220, 220);
-}
-.section-2 img{
-  width: 100%;
-  margin-top: 70px;
-}
-.item-1, .item-2, h2{
-  text-align: center;
-}
 
-
-.item-1 {
-  border-right: 1px solid rgb(223, 220, 220);
+  img{
+    width: 80%;
+    margin-top: 20px;
+  }
+  .item-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 1px solid rgb(223, 220, 220);
+  }
 }
 
 /* FORMULAIRE */

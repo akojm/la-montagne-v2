@@ -107,7 +107,7 @@ span.social{
 ul.icon{
     list-style: none;
     grid-area: icon;
-    font-size: 1.5rem;
+    font-size: 0.rem;
   
 }
 ul {
@@ -119,6 +119,7 @@ ul {
 
     span,li{
         border: 2px solid rgb(247, 243, 245);
+        
         width: 14px;
         height: 14px;
         border-radius: 50%;

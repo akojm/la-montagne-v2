@@ -98,7 +98,7 @@ nav {
   background: rgba(255, 255, 255, 0.15);
   height: 65px;
   position: absolute;
-  top: 695px;
+  top: 855px;
   width: 100%;
 }
 
@@ -160,24 +160,32 @@ nav ul li {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  min-height: 800px;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  min-height: 600px;
   background: white;
   border-top: 1px solid #dfdcdc;
 }
 
 .section-2 img {
-  width: 100%;
-  margin-top: 70px;
+  width: 80%;
+  margin-top: 20px;
 }
 
-.item-1, .item-2, h2 {
-  text-align: center;
-}
-
-.item-1 {
+.section-2 .item-1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   border-right: 1px solid #dfdcdc;
 }
 
@@ -360,7 +368,7 @@ nav ul li {
   -ms-grid-row: 4;
   -ms-grid-column: 2;
   grid-area: icon;
-  font-size: 1.5rem;
+  font-size: 0.8rem;
 }
 
 .right ul {
