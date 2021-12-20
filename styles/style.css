@@ -1,15 +1,14 @@
 @font-face {
-  font-family: "font-1";
-  src: url("/assets/fonts/Merriweather-Regular.ttf");
+  font-family: "principale";
+  src: url(/assets/fonts/Merriweather-Regular.ttf);
 }
 
 :root {
   --main-color: rgb(170, 241, 55);
-  --second-color: #010122;
+  --second-color: #000000;
   --white: rgb(248, 248, 248);
   --black: rgb(32, 32, 32);
   --br: 20px;
-  --font-1: "font-1", sans-serif;
 }
 
 * {
@@ -25,10 +24,12 @@ html {
 
 body {
   background: url(/assets/img/bg.jpg) center/cover fixed;
-  font-family: "font-1";
-  min-height: 390vh;
+  font-family: "principale";
+  min-height: 420vh;
   text-align: center;
   width: 80%;
+  letter-spacing: 2px;
+  font-size: 0.9rem;
   margin: 0 auto;
   position: relative;
 }
@@ -55,7 +56,6 @@ h1 {
   text-align: center;
   font-size: 3rem;
   color: var(--white);
-  font-family: "font-1", Arial, Helvetica, sans-serif;
 }
 
 header {
@@ -97,6 +97,9 @@ nav {
           justify-content: space-between;
   background: rgba(255, 255, 255, 0.15);
   height: 65px;
+  position: absolute;
+  top: 700px;
+  width: 100%;
 }
 
 nav ul {
@@ -109,7 +112,7 @@ nav ul {
 }
 
 nav ul li {
-  padding: 0 15px;
+  padding: 0 11px;
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -119,6 +122,10 @@ nav ul li {
           align-items: center;
   cursor: pointer;
   text-transform: uppercase;
+}
+
+nav ul li :hover {
+  color: #0695ce;
 }
 
 /* section -1 */
@@ -137,6 +144,11 @@ nav ul li {
           align-items: center;
   background: white;
   padding: 25px;
+  position: relative;
+}
+
+.section-1 p {
+  width: 90%;
 }
 
 .section-1 img {
@@ -148,6 +160,26 @@ nav ul li {
   margin-top: 32px;
 }
 
+.section-1 .date::after {
+  content: " ";
+  position: absolute;
+  width: 33%;
+  height: 1px;
+  background: #e4e1e1;
+  top: 72px;
+  left: 80px;
+}
+
+.section-1 .date::before {
+  content: " ";
+  position: absolute;
+  width: 33%;
+  height: 1px;
+  background: #e4e1e1;
+  top: 72px;
+  right: 80px;
+}
+
 /* SECTION 2 */
 .section-2 {
   display: -webkit-box;
@@ -157,19 +189,16 @@ nav ul li {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  min-height: 600px;
+  text-align: center;
+  min-height: 750px;
   background: white;
   border-top: 1px solid #dfdcdc;
 }
 
 .section-2 img {
   width: 80%;
-  margin-top: 20px;
 }
 
 .section-2 .item-1 {
@@ -183,18 +212,36 @@ nav ul li {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   border-right: 1px solid #dfdcdc;
+  position: relative;
 }
 
-/* FORMULAIRE */
-.container {
+.section-2 .item-2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  border-right: 1px solid #dfdcdc;
+}
+
+.section-2 h2 {
+  width: 80%;
+}
+
+.section-2 p.info-section {
+  width: 80%;
 }
 
 .btn {
@@ -287,10 +334,7 @@ nav ul li {
       grid-template-columns: 30% 70%;
   -ms-grid-rows: 1fr 1fr 1fr 1fr;
       grid-template-rows: 1fr 1fr 1fr 1fr;
-      grid-template-areas: "adresse info-adresse"
- "tel info-tel "
- "mail info-mail"
- "social icon";
+      grid-template-areas: "adresse info-adresse" "tel info-tel " "mail info-mail" "social icon";
 }
 
 .right p {
@@ -314,6 +358,7 @@ nav ul li {
   -ms-grid-column: 2;
   grid-area: info-adresse;
   line-height: 25px;
+  margin-top: 22px;
 }
 
 .right span.name-phone {
@@ -368,7 +413,8 @@ nav ul li {
   -ms-grid-row: 4;
   -ms-grid-column: 2;
   grid-area: icon;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
+  margin-top: -2px;
 }
 
 .right ul {
@@ -386,11 +432,29 @@ nav ul li {
   padding: 0;
 }
 
-.right ul span, .right ul li {
-  border: 2px solid #f7f3f5;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  padding: 20px;
+.right ul li {
+  border: 1px solid #dfdcdc;
+  margin: 0 5px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 100px;
+  width: 40px;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.right ul li :hover {
+  color: #0695ce;
+}
+
+.right ul li i {
+  font-size: 15px;
+  color: black;
 }
 /*# sourceMappingURL=style.css.map */
