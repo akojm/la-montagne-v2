@@ -1,14 +1,6 @@
 @font-face {
   font-family: "principale";
-  src: url(/assets/fonts/Merriweather-Regular.ttf);
-}
-
-:root {
-  --main-color: rgb(170, 241, 55);
-  --second-color: #000000;
-  --white: rgb(248, 248, 248);
-  --black: rgb(32, 32, 32);
-  --br: 20px;
+  src: url(/assets/fonts/MerriweatherSans-Regular.ttf);
 }
 
 * {
@@ -24,14 +16,20 @@ html {
 
 body {
   background: url(/assets/img/bg.jpg) center/cover fixed;
-  font-family: "principale";
   min-height: 420vh;
   text-align: center;
-  width: 80%;
+  width: 100%;
   letter-spacing: 2px;
   font-size: 0.9rem;
   margin: 0 auto;
   position: relative;
+  font-family: "principale";
+}
+
+main {
+  width: 90%;
+  margin: 0 auto;
+  min-height: 200vh;
 }
 
 li {
@@ -55,7 +53,7 @@ p {
 h1 {
   text-align: center;
   font-size: 3rem;
-  color: var(--white);
+  color: white;
 }
 
 header {
@@ -73,18 +71,41 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-transform: translateY(20px);
+          transform: translateY(20px);
+  opacity: 0;
+  -webkit-animation: headerAnim 1.5s forwards;
+          animation: headerAnim 1.5s forwards;
+}
+
+@-webkit-keyframes headerAnim {
+  100% {
+    -webkit-transform: translateY(-40px);
+            transform: translateY(-40px);
+    opacity: 1;
+  }
+}
+
+@keyframes headerAnim {
+  100% {
+    -webkit-transform: translateY(-40px);
+            transform: translateY(-40px);
+    opacity: 1;
+  }
 }
 
 header h1 {
   text-transform: uppercase;
   font-size: 4rem;
   font-weight: 700;
+  font-family: "principale";
 }
 
 header p {
   margin: 40px auto 60px;
   width: 85%;
   font-style: italic;
+  color: white;
 }
 
 /* *** Nav bar *** */
@@ -97,8 +118,6 @@ nav {
           justify-content: space-between;
   background: rgba(255, 255, 255, 0.15);
   height: 65px;
-  position: absolute;
-  top: 700px;
   width: 100%;
 }
 
@@ -109,6 +128,8 @@ nav ul {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 nav ul li {
@@ -180,7 +201,12 @@ nav ul li :hover {
   right: 80px;
 }
 
-/* SECTION 2 */
+/* FOOTER */
+footer {
+  width: 90%;
+  margin: 0 auto;
+}
+
 .section-2 {
   display: -webkit-box;
   display: -ms-flexbox;
