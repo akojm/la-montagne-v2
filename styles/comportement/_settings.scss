@@ -23,6 +23,24 @@ html {
     margin: 0 auto;
     position: relative;
     font-family: "principale";
+
+    &:before {
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background: #1e252d;
+      animation: animBefore 1.5s ease forwards;
+      animation-delay: 0.3s;
+  
+      @keyframes animBefore {
+        to {
+          opacity: 0;
+        }
+      }
+    }
   }
   main{
     width: 90%;
@@ -35,7 +53,7 @@ list-style: none;
 }
 a,
 a:visited{
-    color: white;
+    color: rgb(255, 255, 255);
 }
 a{
   text-decoration: none;
@@ -44,18 +62,6 @@ p{
   font-size: 0.8rem;
   line-height: 30px;
 }
-// Centrer un enfant unique
-@mixin centerChild {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-// Aligner parfaitement des enfants
-@mixin flexChildren {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
 
 h1{ 
     text-align: center;
@@ -63,7 +69,7 @@ h1{
    color: white;
 }
 header{
-  min-height: 100vh;
+  min-height: 92vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -93,7 +99,6 @@ header{
   }
 }
 
-
 /* *** Nav bar *** */
 
 nav {
@@ -106,21 +111,47 @@ nav {
     ul{
       display: flex;
       align-items: center;
-      justify-content: space-around;
-
-      li{
-        padding: 0 11px;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        cursor: pointer;
+    
+      &.item-left {
         text-transform: uppercase;
-        :hover{
-          color:rgb(6, 149, 206);
+        font-weight: 700;
+
+        &:hover li:not(:hover) {
+          background: none;
+          color: rgb(255, 255, 255);
         }
-        }
+
+        li{
+          padding: 0 11px;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          transition: 0.2s;
+          cursor: pointer;
+
+  
+          &:first-child {
+            background: rgb(255, 255, 255);
+            color: rgb(0, 0, 0);
+          }
+
+          &:hover {
+            background: white;
+            color: rgb(0, 0, 0);
+          }
+
+         }
       }
-     
+      &.item-right{
+        font-size: 1.3rem;
+        min-width: 100px;
+        width: 25%;
+        max-width: 300px;
+        justify-content: space-around;
+        font-weight: bold;
+      }
+      }
+    
         }
 
 /* section -1 */
