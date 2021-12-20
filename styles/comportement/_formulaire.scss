@@ -29,21 +29,32 @@
         letter-spacing: 2px;
         text-align: left;
     }
-    button{
-        width: 40%;
-        padding: 15px 25px;
+    input[type="submit"]{
+        width: 35%;
         margin-top: 32px;
+        padding: 15px 10px;
         background: none;
         border: 2px solid black;
         cursor: pointer;
         font-weight: bold;
-        font-size: 0.8rem;
+        font-size: 0.7rem;
         text-transform: uppercase;
         &:hover{
             color: rgb(208, 208, 221);
             border:2px solid rgb(208, 208, 221)  ;
         }
     }
+    }
+    @media (max-width:890px) {
+        flex-direction: column;
+        form{
+            width: 100%;
+        }
+        .right{
+            width: 100%;
+            margin-top: 30px;
+            border-top: 1px solid rgb(228, 225, 225);
+        }
     }
 }
 .right{
