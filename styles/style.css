@@ -706,10 +706,13 @@ footer .infos-contact .social ul li {
 
 @media (max-width: 500px) {
   footer .infos-contact .social ul li {
-    font-size: 1.5rem;
+    font-size: 1rem;
     border-radius: 150px;
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 
