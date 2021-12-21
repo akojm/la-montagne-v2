@@ -40,12 +40,11 @@ h1 {
 
 body {
   background: url(../assets/img/bg.jpg) center/cover fixed;
-  min-height: 445vh;
   text-align: center;
   width: 100%;
   letter-spacing: 2px;
   font-size: 0.9rem;
-  margin: 0 auto;
+  margin: 0 auto 50px;
   font-family: "principale";
 }
 
@@ -76,7 +75,7 @@ body:before {
 }
 
 header {
-  min-height: 92vh;
+  min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -130,7 +129,7 @@ header p {
   margin: 40px auto 60px;
   width: 85%;
   font-style: italic;
-  color: white;
+  color: #ffffff;
 }
 
 /* *** Nav bar *** */
@@ -146,6 +145,7 @@ nav {
   width: 100%;
   z-index: 100;
   position: relative;
+  margin-top: -65px;
 }
 
 @media (max-width: 692px) {
@@ -244,13 +244,15 @@ main {
       -ms-flex-align: center;
           align-items: center;
   background: white;
-  font-style: italic;
   padding: 25px;
   position: relative;
 }
 
 .section-1 p {
   width: 90%;
+  margin-top: 30px;
+  font-style: italic;
+  color: #8a8a8a;
 }
 
 .section-1 img {
@@ -275,17 +277,57 @@ main {
   height: 1px;
   background: #e4e1e1;
   top: 10px;
-  left: -200px;
+  left: -150px;
+}
+
+@media (max-width: 600px) {
+  .section-1 .date::after {
+    width: 45%;
+    left: -95px;
+  }
+}
+
+@media (max-width: 450px) {
+  .section-1 .date::after {
+    width: 50%;
+    left: -70px;
+  }
+}
+
+@media (max-width: 360px) {
+  .section-1 .date::after {
+    display: none;
+  }
 }
 
 .section-1 .date::before {
   content: " ";
   position: absolute;
-  width: 150%;
+  width: 100%;
   height: 1px;
   background: #e4e1e1;
   top: 10px;
-  right: -200px;
+  right: -150px;
+}
+
+@media (max-width: 600px) {
+  .section-1 .date::before {
+    width: 60%;
+    right: -95px;
+  }
+}
+
+@media (max-width: 450px) {
+  .section-1 .date::before {
+    width: 50%;
+    right: -70px;
+  }
+}
+
+@media (max-width: 360px) {
+  .section-1 .date::before {
+    display: none;
+  }
 }
 
 .section-2 {
@@ -320,13 +362,6 @@ main {
 
 .section-2 img {
   width: 80%;
-}
-
-.section-2 img:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-  -webkit-transition: 1s;
-  transition: 1s;
 }
 
 .section-2 .item-1 {
@@ -370,6 +405,7 @@ main {
 
 .section-2 p.info-section {
   width: 80%;
+  color: #8a8a8a;
 }
 
 /* FOOTER */
@@ -391,208 +427,275 @@ footer {
   border: 2px solid #d0d0dd;
 }
 
-.container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+/*
+.container{
+    display: flex;
+    flex-direction: row;
+    background: white;
+    min-height: 520px;
+    margin-top: 15px;
+
+    @media (max-width:890px) {
+        padding: 15px 0px;
+    }
+    form{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: flex-start;
+        border-right: 1px solid rgb(228, 225, 225);
+        padding: 0px 35px;
+
+    input{
+        padding: 10px;
+       border: 1px solid rgb(228, 225, 225);
+    }
+    textarea{
+        border: 1px solid rgb(228, 225, 225);
+        resize: none;
+    }
+    label {
+        font-size: 0.8rem;
+        margin: 18px 0px 8px;
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 2px;
+        text-align: left;
+    }
+    input[type="submit"]{
+        width: 50%;
+        margin-top: 32px;
+        padding: 15px 10px;
+        background: none;
+        border: 2px solid black;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        &:hover{
+            color: rgb(208, 208, 221);
+            border:2px solid rgb(208, 208, 221)  ;
+        }
+    }
+    }
+    @media (max-width:890px) {
+        flex-direction: column;
+        form{
+            width: 100%;
+        }
+        .right{
+            width: 100%;
+            margin-top: 30px;
+            border-top: 1px solid rgb(228, 225, 225);
+        }
+    }
+}
+.right{
+ p{letter-spacing: 1px;
+    text-align: left;
+}
+width: 50%;
+display: grid;
+align-items: center;
+grid-template-columns: 30% 70%;
+grid-template-rows: 1fr 1fr 1fr 1fr ;
+grid-template-areas: 
+"adresse info-adresse"
+"tel info-tel "
+"mail info-mail"
+"social icon"
+;
+span.name-adresse {
+    grid-area: adresse;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+}
+p.info-adresse {
+    grid-area: info-adresse;
+    line-height: 25px;
+    margin-top: 22px;
+}
+span.name-phone {
+    grid-area: tel;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+}
+p.num-phone { 
+    grid-area: info-tel; 
+    text-decoration: underline;
+}
+span.name-email {
+    grid-area: mail;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+}
+p.name-email {
+    grid-area: info-mail;
+    text-decoration: underline;
+}
+span.social{  
+    grid-area: social; 
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+}
+ul.icon{
+    list-style: none;
+    grid-area: icon;
+    font-size: 0.7rem;
+    margin-top: -2px;
+    
+}
+ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    margin: 0px;
+    padding: 0;
+
+    li{
+        border:1px solid rgb(223, 220, 220);
+        margin: 0 5px;
+        align-items: center;
+        border-radius: 100px;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        :hover{
+            color: rgb(6, 149, 206);
+        }
+        i{
+            font-size: 15px;
+            color: black;
+        }
+    }
+}
+}
+*/
+footer {
   background: white;
-  min-height: 520px;
-  margin-top: 15px;
+  margin-top: 30px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 50% 50%;
+      grid-template-columns: 50% 50%;
 }
 
-.container form {
-  width: 50%;
+@media screen and (max-width: 890px) {
+  footer {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
+footer form {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 18px 45px 18px 45px 18px 200px 1fr;
+      grid-template-rows: 18px 45px 18px 45px 18px 200px 1fr;
+  gap: 18px;
+  padding: 60px 50px;
+  text-transform: uppercase;
+}
+
+footer form label {
+  font-size: 0.7rem;
+  font-weight: 800;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: start;
-      align-content: flex-start;
-  border-right: 1px solid #e4e1e1;
-  padding: 0px 35px;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 
-.container form input {
-  padding: 10px;
-  border: 1px solid #e4e1e1;
-}
-
-.container form textarea {
-  border: 1px solid #e4e1e1;
+footer form input[type="text"],
+footer form textarea {
+  background: none;
+  border: 1px solid #d1d1d1;
   resize: none;
 }
 
-.container form label {
-  font-size: 0.8rem;
-  margin: 18px 0px 8px;
-  text-transform: uppercase;
-  font-weight: bold;
-  letter-spacing: 2px;
-  text-align: left;
+footer form .submit-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 
-.container form input[type="submit"] {
-  width: 50%;
-  margin-top: 32px;
-  padding: 15px 10px;
+footer form .submit-container input[type="submit"] {
   background: none;
   border: 2px solid black;
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 0.7rem;
+  height: 45px;
+  width: 180px;
   text-transform: uppercase;
 }
 
-.container form input[type="submit"]:hover {
+footer form .submit-container input[type="submit"]:hover {
+  cursor: pointer;
   color: #d0d0dd;
   border: 2px solid #d0d0dd;
 }
 
-@media (max-width: 890px) {
-  .container {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  .container form {
-    width: 100%;
-  }
-  .container .right {
-    width: 100%;
-    margin-top: 30px;
-    border-top: 1px solid #e4e1e1;
-  }
-}
-
-.right {
-  width: 50%;
+footer .infos-contact {
+  border-left: 1px solid #d1d1d1;
   display: -ms-grid;
   display: grid;
+  -ms-grid-rows: (1fr)[4];
+      grid-template-rows: repeat(4, 1fr);
+}
+
+footer .infos-contact div {
+  border-top: 1px solid #d1d1d1;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 30% 70%;
+      grid-template-columns: 30% 70%;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-grid-columns: 30% 70%;
-      grid-template-columns: 30% 70%;
-  -ms-grid-rows: 1fr 1fr 1fr 1fr;
-      grid-template-rows: 1fr 1fr 1fr 1fr;
-      grid-template-areas: "adresse info-adresse" "tel info-tel " "mail info-mail" "social icon";
 }
 
-.right p {
-  letter-spacing: 1px;
-  text-align: left;
-}
-
-.right span.name-adresse {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-  grid-area: adresse;
-  text-align: center;
+footer .infos-contact div h3 {
   text-transform: uppercase;
-  font-weight: bold;
-  letter-spacing: 2px;
-  font-size: 0.8rem;
-}
-
-.right p.info-adresse {
-  -ms-grid-row: 1;
-  -ms-grid-column: 2;
-  grid-area: info-adresse;
-  line-height: 25px;
-  margin-top: 22px;
-}
-
-.right span.name-phone {
-  -ms-grid-row: 2;
-  -ms-grid-column: 1;
-  grid-area: tel;
-  text-align: center;
-  text-transform: uppercase;
-  font-weight: bold;
-  letter-spacing: 2px;
-  font-size: 0.8rem;
-}
-
-.right p.num-phone {
-  -ms-grid-row: 2;
-  -ms-grid-column: 2;
-  grid-area: info-tel;
-  text-decoration: underline;
-}
-
-.right span.name-email {
-  -ms-grid-row: 3;
-  -ms-grid-column: 1;
-  grid-area: mail;
-  text-align: center;
-  text-transform: uppercase;
-  font-weight: bold;
-  letter-spacing: 2px;
-  font-size: 0.8rem;
-}
-
-.right p.name-email {
-  -ms-grid-row: 3;
-  -ms-grid-column: 2;
-  grid-area: info-mail;
-  text-decoration: underline;
-}
-
-.right span.social {
-  -ms-grid-row: 4;
-  -ms-grid-column: 1;
-  grid-area: social;
-  text-align: center;
-  text-transform: uppercase;
-  font-weight: bold;
-  letter-spacing: 2px;
-  font-size: 0.8rem;
-}
-
-.right ul.icon {
-  list-style: none;
-  -ms-grid-row: 4;
-  -ms-grid-column: 2;
-  grid-area: icon;
   font-size: 0.7rem;
-  margin-top: -2px;
+  padding-left: 60px;
 }
 
-.right ul {
+footer .infos-contact div p {
+  font-size: 0.8rem;
+  line-height: 26px;
+  color: #8a8a8a;
+}
+
+footer .infos-contact .social ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: left;
-      -ms-flex-pack: left;
-          justify-content: left;
-  margin: 0px;
-  padding: 0;
 }
 
-.right ul li {
-  border: 1px solid #dfdcdc;
-  margin: 0 5px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  border-radius: 100px;
-  width: 40px;
+footer .infos-contact .social ul li {
+  border: 1px solid #d1d1d1;
+  font-size: 1.5rem;
+  border-radius: 150px;
   height: 40px;
+  width: 40px;
+  margin-right: 12px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -601,12 +704,21 @@ footer {
           justify-content: center;
 }
 
-.right ul li :hover {
-  color: #0695ce;
+@media (max-width: 500px) {
+  footer .infos-contact .social ul li {
+    font-size: 1.5rem;
+    border-radius: 150px;
+    height: 40px;
+    width: 40px;
+  }
 }
 
-.right ul li i {
+footer .infos-contact .social ul li i {
   font-size: 15px;
   color: black;
+}
+
+footer .infos-contact .social ul li :hover {
+  color: #0695ce;
 }
 /*# sourceMappingURL=style.css.map */
