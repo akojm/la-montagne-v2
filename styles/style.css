@@ -1,6 +1,6 @@
 @font-face {
   font-family: "principale";
-  src: url(/assets/fonts/MerriweatherSans-Regular.ttf);
+  src: url(../assets/fonts/MerriweatherSans-Regular.ttf);
 }
 
 * {
@@ -39,7 +39,7 @@ h1 {
 }
 
 body {
-  background: url(/assets/img/bg.jpg) center/cover fixed;
+  background: url(../assets/img/bg.jpg) center/cover fixed;
   min-height: 445vh;
   text-align: center;
   width: 100%;
