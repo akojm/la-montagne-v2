@@ -228,7 +228,6 @@ footer {
       .social {
         ul {
           display: flex;
-
         
           li {
             border: 1px solid rgb(209, 209, 209);
@@ -249,7 +248,7 @@ footer {
 
             i{
                 font-size: 15px;
-                color: black;
+                color: rgb(0, 0, 0);
             }
             :hover{
                 color: rgb(6, 149, 206);
