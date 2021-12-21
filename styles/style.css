@@ -587,7 +587,7 @@ ul {
 */
 footer {
   background: white;
-  margin-top: 30px;
+  margin-top: 10px;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 50% 50%;
